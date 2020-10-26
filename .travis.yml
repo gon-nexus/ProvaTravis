@@ -3,6 +3,7 @@ node_js:
   - '12'
 addons:
   chrome: stable
+  firefox: "49.0"
 
 cache:
   directories:
