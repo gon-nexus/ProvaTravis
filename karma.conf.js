@@ -26,6 +26,13 @@ module.exports = function (config) {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
+      },
+      'FirefoxHeadless': {
+          base: 'Firefox',
+          flags: ['-headless'],
+          prefs: {
+              'network.proxy.type': 0
+          }
       }
     },
     port: 9876,
