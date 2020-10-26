@@ -6,7 +6,7 @@ node_js:
   - '12'
 addons:
   chrome: stable
-  firefox: "46.0"
+  firefox: "49.0"
 
 before_install:
   - "export DISPLAY=:99.0"
