@@ -1,5 +1,13 @@
+os:
+  - linux
+  - osx
+
 dist: trusty
 sudo: false
+
+jobs:
+  allow_failures:
+    - os: osx
 
 script:
   - npm run jpm-travis
@@ -27,7 +35,7 @@ before_script:
   - npm install jpm -g
   
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox,FirefoxHeadless
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox,FirefoxHeadless,Safari
 
 branches:
   only:
