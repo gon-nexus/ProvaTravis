@@ -9,6 +9,7 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
+      require('karma-safari-launcher'),
       require('@chiragrupani/karma-chromium-edge-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
@@ -40,7 +41,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox', 'Firefox', 'Edge','EdgeHeadless'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox', 'Firefox','Safari', 'Edge','EdgeHeadless'],
     singleRun: false,
     restartOnFileChange: true
   });
