@@ -10,6 +10,7 @@ node_js:
 addons:
   chrome: stable
   firefox: latest
+  edge: latest
 
 cache:
   directories:
