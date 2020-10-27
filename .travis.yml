@@ -20,6 +20,7 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
+  - npm i puppeteer --save
 
 install:
   - npm install
