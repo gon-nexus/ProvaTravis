@@ -27,7 +27,7 @@ before_script:
   - npm install jpm -g
   
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox,FirefoxHeadless
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox,FirefoxHeadless,Edge
 
 branches:
   only:
