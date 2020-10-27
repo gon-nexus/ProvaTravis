@@ -24,8 +24,8 @@ cache:
     - ./node_modules
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then export DISPLAY=:99.0 ; 
-  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then sh -e /etc/init.d/xvfb start ; 
+  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then export DISPLAY=:99.0 ; fi
+  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then sh -e /etc/init.d/xvfb start ; fi
   - sleep 3
 
 install:
@@ -35,8 +35,8 @@ before_script:
   - npm install jpm -g
   
 script:
-  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox,FirefoxHeadless ;
-  - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then npm run test -- --watch=false --no-progress --browsers=Safari ;
+  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox,FirefoxHeadless ; fi
+  - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then npm run test -- --watch=false --no-progress --browsers=Safari ; fi
 branches:
   only:
   - master
