@@ -1,6 +1,8 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -35,13 +37,21 @@ module.exports = function (config) {
           prefs: {
               'network.proxy.type': 0
           }
+      },
+      Edge_without_security: {
+        base: 'Edge',
+        flags: ['--disable-web-security', '--disable-site-isolation-trials']
+      },
+      Edge_with_debugging: {
+        base: 'Edge',
+        edgeDataDir: path.resolve(__dirname, '.edge')
       }
     },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox', 'Firefox','Safari', 'Edge','EdgeHeadless'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox', 'Firefox','Safari', 'Edge','EdgeHeadless','Edge_without_security'],
     singleRun: false,
     restartOnFileChange: true
   });
