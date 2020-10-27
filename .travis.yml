@@ -7,6 +7,9 @@ node_js:
 script:
   - npm run jpm-travis
 
+services:
+  - xvfb 
+  
 os:
   - linux
   - osx
@@ -25,7 +28,6 @@ cache:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then export DISPLAY=:99.0 ; fi
-  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then sh -e /etc/init.d/xvfb start ; fi
   - sleep 3
 
 install:
